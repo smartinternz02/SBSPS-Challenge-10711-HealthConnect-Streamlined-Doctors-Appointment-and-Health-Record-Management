@@ -5,9 +5,15 @@ const app = express();
 dotenv.config();
 connectDB();
 
+const userRoutes = require("./Routes/userRoutes.js");
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.use("/api/users", userRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Hello, abhi!");
+  res.send("Hello, YOGII!");
 });
 
 const PORT = process.env.PORT || 8000;
