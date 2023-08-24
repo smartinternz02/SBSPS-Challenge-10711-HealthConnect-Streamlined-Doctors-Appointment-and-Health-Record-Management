@@ -1,17 +1,23 @@
-import { useState } from 'react'
-
+import React from 'react'
 import './App.css'
+import Lnading from './Screens/Lnading'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Nav from './Component/Nav'
+import Login from './Screens/Login'
+import Register from './Screens/Register'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <h1>its understanding bro !!!</h1>
-      </div>
-    </>
+    <BrowserRouter>
+    <Nav></Nav>
+    <Routes>
+      <Route path='/'element={<Lnading/>}/>
+      <Route path='/Login'element={<Login/>}/>
+      <Route path='/Register'element={<Register/>}/>
+
+    </Routes>
+    
+    </BrowserRouter>
   )
 }
 
-export default App
