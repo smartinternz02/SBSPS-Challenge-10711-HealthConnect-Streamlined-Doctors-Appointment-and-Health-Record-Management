@@ -47,6 +47,7 @@ const app = express();
 dotenv.config();
 connectDB();
 
+
 import authRoutes from './Routes/auth.mjs'
 
 import cookieParser from 'cookie-parser';
@@ -65,8 +66,16 @@ app.use((req,res,next)=>{
 })  
 
 
+const userRoutes = require("./Routes/userRoutes.js");
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.use("/api/users", userRoutes);
+
+
 app.get("/", (req, res) => {
-  res.send("Hello, abhi!");
+  res.send("Hello, YOGII!");
 });
 
 // auth
