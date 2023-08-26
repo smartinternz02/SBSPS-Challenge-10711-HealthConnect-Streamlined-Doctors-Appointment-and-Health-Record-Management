@@ -6,42 +6,43 @@ import axios from 'axios';
 
 import { signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../firebase';
+import { useDispatch } from 'react-redux';
+import { loginFaliure, loginStart, loginSuccess } from '../redux/userSlice';
 
 export default function Login() {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("");
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate()
 
   const handleLogin=async(e)=>{
     e.preventDefault();
-    // dispatch(loginStart())
+    dispatch(loginStart())
     try {
       console.log(email,password);
       const res=await axios.post("http://localhost:8080/api/auth/login",{email,password})
-      // dispatch(loginSuccess(res.data));
       console.log(res.data);
+      dispatch(loginSuccess(res.data));
       const loguser=res.data;
       if(loguser) navigate(`/`)
 
     } catch (err) {
       console.log(err)
-      // dispatch(loginFaliure());
+      dispatch(loginFaliure());
     }
   }
   const loginwithgoogle=()=>{
-    // dispatch(loginStart());
+    dispatch(loginStart());
      signInWithPopup(auth,provider).then((data)=>{
        axios.post("http://localhost:8080/api/auth/google",{name:data.user.displayName,email:data.user.email,img:data.user.photoURL}).then((res)=>{
-    //      dispatch(loginSuccess(res.data));
-
+         dispatch(loginSuccess(res.data));
          navigate("/");
        })
      })
      .catch(error=>{
       console.log(error)
-    //    dispatch(loginFaliure())
+       dispatch(loginFaliure())
   })
     console.log("first")
    }

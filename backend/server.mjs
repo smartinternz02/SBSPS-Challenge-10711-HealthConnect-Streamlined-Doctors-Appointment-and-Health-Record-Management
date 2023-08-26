@@ -1,43 +1,3 @@
-// import express from "express";
-// import dotenv from "dotenv";
-// import connectDB from "./db/db.mjs";
-// var router=express.Router()
-// const app = express();
-// dotenv.config();
-// connectDB();
-
-// const cors = require('cors');
-// import { login,Signup,loginwithgoogle } from "./db/auth.js";
-// app.use("/", router);
-
-
-// // Enable CORS for all routes
-// app.use(cors());
-
-// app.use(cors({
-//   origin: 'http://localhost:5173/', // Replace with your frontend's domain
-//   credentials: true // This allows cookies to be included in the request
-// }));
-
-// app.get("/", (req, res) => {
-//   res.send("Hello, abhi!");
-// });
-
-// // Signup
-// router.post("/api/signup" ,Signup);
-
-// // login2
-// router.post("/api/login",login );
-
-// // google
-// router.post("/api/google",loginwithgoogle);
-
-
-
-// const PORT = process.env.PORT || 8000;
-// app.listen(PORT, () => {
-//   console.log(`Server is running on port http://localhost:${PORT}`);
-// });
 
 import express from "express";
 import dotenv from "dotenv";
@@ -73,7 +33,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth",authRoutes)
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT ;
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
 });
