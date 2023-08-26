@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import './Register.css'
+import '../styles/Register.css'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 import { signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../firebase';
+import { useDispatch } from 'react-redux';
 
 
 
@@ -16,8 +17,7 @@ function Register() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  // const dispatch=useDispatch();
-  // const navigate=useNavigate();
+  const dispatch=useDispatch();
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -25,28 +25,28 @@ function Register() {
         console.log({name,email,password})
         const res=await axios.post("http://localhost:8080/api/auth/signup",{name,email,password})
         .then((res)=>{
-        // dispatch(loginSuccess(res.data));
+        dispatch(loginSuccess(res.data));
         console.log(res.data);
         navigate("/");
       })
     } catch (err) {
       console.log(err)
-        // dispatch(loginFaliure());;
+        dispatch(loginFaliure());
       }
   }
 
   const loginwithgoogle=()=>{
-    // dispatch(loginStart());
+    dispatch(loginStart());
      signInWithPopup(auth,provider).then((data)=>{
        axios.post("http://localhost:8080/api/auth/google",{name:data.user.displayName,email:data.user.email,img:data.user.photoURL}).then((res)=>{
-    //      dispatch(loginSuccess(res.data));
+         dispatch(loginSuccess(res.data));
 
          navigate("/");
        })
      })
      .catch(error=>{
       console.log(error)
-    //    dispatch(loginFaliure())
+       dispatch(loginFaliure())
   })
     console.log("first")
    }

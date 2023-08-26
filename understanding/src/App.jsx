@@ -7,7 +7,6 @@ import Nav from './Component/Nav'
 import Login from './Screens/Login'
 import Register from './Screens/Register'
 
-import AssessmentCarousel from './pages/Assessment'
 
 
 export default function App() {
@@ -24,12 +23,6 @@ export default function App() {
     
     </BrowserRouter>
 
-    <>
-      <div>
-        <h1>its understanding bro !!!</h1>
-        <AssessmentCarousel/>
-      </div>
-    </>
 
   )
 }
