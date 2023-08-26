@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Nav from '../Component/Nav'
 import { Link } from 'react-router-dom';
 import Im1 from '../Assets/Im1.png'
-import './Landing.css'
+import '../styles/Landing.css'
 import Footer from '../Component/Footer';
 import { FaUserMd } from 'react-icons/fa';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
