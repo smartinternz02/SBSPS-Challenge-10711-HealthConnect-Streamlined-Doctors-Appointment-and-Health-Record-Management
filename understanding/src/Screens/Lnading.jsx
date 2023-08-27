@@ -28,8 +28,10 @@ function Lnading() {
             <h1 style={{ marginBottom: '10px' }}>Lorem, ipsum dolor.</h1>
             <p style={{ width: '70%', marginBottom: '15px' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, quia.</p>
             <div className='btn'>
-              start  <ArrowForwardIcon style={{ color: 'black' }} />
-            </div>
+      <Link to="/Assessment">
+        Start <ArrowForwardIcon style={{ color: 'black' }} />
+      </Link>
+    </div>
           </div>
 
         </div>
