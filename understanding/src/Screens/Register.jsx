@@ -6,6 +6,7 @@ import axios from 'axios'
 import { signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../firebase';
 import { useDispatch } from 'react-redux';
+import { loginFaliure, loginStart, loginSuccess } from '../redux/userSlice';
 
 
 
