@@ -13,6 +13,7 @@ function Footer() {
     fontSize: '1.2vw',
     color: 'black',
     justifyContent: 'center',
+
   };
   return (
     <>
