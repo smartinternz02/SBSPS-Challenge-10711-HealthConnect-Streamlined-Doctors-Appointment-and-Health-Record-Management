@@ -13,9 +13,18 @@ function Nav() {
     dispatch(logout());
     navigate("/")
   }
-  // console.log(currentUser.currentuser.name)
 
   const navStyles = {
+
+    width: '8vw', padding: '.7vw 0px', 
+    borderRadius: '30px', backgroundColor: ' #d65485',
+     textDecoration: 'none', color: 'white',
+      cursor: 'pointer',fontSize:'1.5vw',
+      display:'flex',justifyContent:'center'
+  };
+  return (
+    <div style={{ height: '10vmin', width: '100%', display: 'flex', alignItems: 'center', padding: 20, fontSize: '3vmin', fontWeight: '400', zIndex: 9, boxShadow: 'inset 0 -2px 0vw #d7b4c8' }}>
+
     width: 'fit-content', padding: '.7vw 1.5vw',
     borderRadius: '30px', backgroundColor: ' #d65485',
     textDecoration: 'none', color: 'white',
@@ -24,7 +33,7 @@ function Nav() {
   return (
     <div style={{ height: '10vmin', width: '100%', backgroundColor: '#2f1e26', display: 'flex', alignItems: 'center', padding: 20, fontSize: '3vmin', fontWeight: '400', zIndex: 9, boxShadow: 'inset 0 -2px 0vw #d7b4c8' }}>
       <div style={{ width: '40vw' }}>
-        Nav
+        Understanzee
       </div>
       {currentUser.currentuser ?
         <div style={{
@@ -42,10 +51,10 @@ function Nav() {
             '20px'
         }}>
           <Link to="/Register" style={navStyles}>
-            signUp
+            SignUp
           </Link>
           <Link to="/Login" style={navStyles}>
-            signIn
+            Login
           </Link>
         </div>
       }

@@ -5,6 +5,12 @@
   font-family: 'gilroy';
   font-weight: '100';
   background: linear-gradient(#2f1e26, #b03460);
+
+color: white;
+user-select: none;
+
+
   color: white;
   user-select: none;
+
 }
