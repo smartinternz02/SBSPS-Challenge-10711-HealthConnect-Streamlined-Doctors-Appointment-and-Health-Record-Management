@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "frontend": "cd understanding && npm run dev",
     "backend": "cd backend && node server.mjs",
-    "dev": "concurrently \"npm run frontend\" \"npm run backend\""
+    "ml": "cd ml && python app.py",
+    "dev": "concurrently \"npm run ml\" \"npm run frontend\" \"npm run backend\""
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,7 @@
   "dependencies": {
     "axios": "^1.4.0",
     "concurrently": "^8.2.0",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "redux-persist": "^6.0.0"
   }
 }

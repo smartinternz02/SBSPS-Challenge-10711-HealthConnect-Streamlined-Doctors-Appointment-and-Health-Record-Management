@@ -10,6 +10,7 @@ import authRoutes from "./Routes/auth.mjs";
 
 import cookieParser from "cookie-parser";
 
+<<<<<<< HEAD
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.header(
@@ -20,11 +21,16 @@ app.use((req, res, next) => {
 });
 app.use(cookieParser());
 app.use(express.json());
+=======
+
+>>>>>>> 03b952b52dd3e5e88abe835fdd1636b3c2f714b1
 
 app.get("/", (req, res) => {
   res.send("Hello, Abhi!");
 });
 
+app.use(cookieParser())
+app.use(express.json());
 // auth
 
 app.use("/api/auth", authRoutes);
