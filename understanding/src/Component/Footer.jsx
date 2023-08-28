@@ -4,28 +4,28 @@ function Footer() {
   const footerStyles = {
     display: 'flex',
     gap: '50px',
-    fontSize: '14px',
     width: '100%',
-    height: '5vh',
+    height: '8vh',
     alignItems: 'center',
     paddingLeft: '20px',
     borderTop: '2px solid #8f848f',
-    backgroundColor:'#f5f2f1',
-    fontSize:'1.2vw',
-    color:'black',
+    backgroundColor: '#f5f2f1',
+    fontSize: '1.2vw',
+    color: 'black',
+    justifyContent: 'center',
   };
   return (
     <>
+
+
       <div style={footerStyles}>
-        <p>
-          © 2023
-        </p>
-        <p>
-          Moody
-        </p>
-        <p>
-          All Rights Reserved
-        </p>
+        <div style={{textAlign:'center'}}>
+          <h3>Understanzee</h3>
+          <p>
+            All Rights Reserved &nbsp; © 2023 &nbsp; Understanzee Team
+          </p>
+        </div>
+
       </div>
     </>
   )
