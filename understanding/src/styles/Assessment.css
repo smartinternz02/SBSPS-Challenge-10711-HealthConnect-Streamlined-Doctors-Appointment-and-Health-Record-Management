@@ -1,15 +1,14 @@
-body {
-    background-color: #f2e0f2;
-    margin: 0;
-    padding: 0;
-  }
-  
+/* body { */
+    /* background-color: #f2e0f2; */
+   /* margin:0; */
+    /* padding: 0; */
+  /* } */
   .assessment-container {
     width: 80%;
-    margin: 0 auto;
+    margin: 20px auto ;
     padding: 20px;
     text-align: center;
-     position: relative;  
+    position: relative;  
     overflow: hidden; 
     background-color: white; 
     box-shadow: 0 0 10px #e8a5c8; 
