@@ -28,14 +28,12 @@ function Lnading() {
           <div className='leftTitle'>
             <h1 style={{ marginBottom: '10px',fontSize:'2vw' }}>Lorem, ipsum dolor.</h1>
             <p style={{ width: '70%', marginBottom: '15px',fontSize:'1.2vw' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, quia.</p>
-            <div className='btn'>
+            <Link to="/Assessment" className='btn'>
 
               start  <ArrowForwardIcon style={{ color: 'black',fontSize:'1.2vw' }}  />
-            </div>
+            </Link>
 
-      <Link to="/Assessment">
-        Start <ArrowForwardIcon style={{ color: 'black' }} />
-      </Link>
+      
     </div>
 
           </div>
@@ -120,8 +118,8 @@ function Lnading() {
           <h3>Thank you</h3>
         </div>
 
+     
         <Footer />
-      </div>
       </>
 
   )

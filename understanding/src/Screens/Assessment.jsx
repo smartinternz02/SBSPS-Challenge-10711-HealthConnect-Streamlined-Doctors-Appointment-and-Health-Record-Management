@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import img1 from "../assests/Psychology1.jpg";
+import img1 from "../Assets/Psychology1.jpg";
 import '../styles/Assessment.css'; 
 
 const AssessmentCarousel = () => {
