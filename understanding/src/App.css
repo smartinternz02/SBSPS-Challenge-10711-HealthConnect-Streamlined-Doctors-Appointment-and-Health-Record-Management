@@ -4,4 +4,7 @@
   box-sizing: border-box;
   font-family: 'gilroy';
   font-weight: '100';
+  background: linear-gradient(#e9c5e5, #f091b3);
+color: white;
+user-select: none;
 }

@@ -10,7 +10,9 @@ function Footer() {
     alignItems: 'center',
     paddingLeft: '20px',
     borderTop: '2px solid #8f848f',
-    backgroundColor:'#f5f2f1'
+    backgroundColor:'#f5f2f1',
+    fontSize:'1.2vw',
+    color:'black',
   };
   return (
     <>
