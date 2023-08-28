@@ -12,8 +12,7 @@ import authRoutes from './Routes/auth.mjs'
 
 import cookieParser from 'cookie-parser';
 
-app.use(cookieParser())
-app.use(express.json());
+
 
 app.use((req,res,next)=>{
     res.setHeader("Access-Control-Allow-Origin","http://localhost:5173");
@@ -31,6 +30,8 @@ app.get("/", (req, res) => {
   res.send("Hello, Abhi!");
 });
 
+app.use(cookieParser())
+app.use(express.json());
 // auth
 
 app.use("/api/auth",authRoutes)
