@@ -10,26 +10,20 @@ import authRoutes from "./Routes/auth.mjs";
 
 import cookieParser from "cookie-parser";
 
-<<<<<<< HEAD
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
   res.header(
     "Access-Control-Allow-Headers",
     "Oringin,X-Requested-With,Content-Type,Accept"
   );
   next();
 });
-app.use(cookieParser());
-app.use(express.json());
-=======
-
->>>>>>> 03b952b52dd3e5e88abe835fdd1636b3c2f714b1
 
 app.get("/", (req, res) => {
   res.send("Hello, Abhi!");
 });
 
-app.use(cookieParser())
+app.use(cookieParser());
 app.use(express.json());
 // auth
 
