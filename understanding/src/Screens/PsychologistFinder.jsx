@@ -12,6 +12,7 @@ const PsychologistFinder = () => {
   useEffect(() => {
     // Fetch psychologists based on user's current location
 
+
     const result = async () => {
       try {
         const solution = await axios.get('http://127.0.0.1:5000/response',);
@@ -30,7 +31,7 @@ const PsychologistFinder = () => {
       try {
 
         const response = await axios.get("http://localhost:8080/api/auth/psychologists");
-        console.log("YOGITA");
+
         setPsychologists(response.data);
       } catch (error) {
         console.error('Error fetching psychologists:', error);
