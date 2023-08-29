@@ -7,7 +7,7 @@ import '../styles/Psycology.css';
 
 const PsychologistFinder = () => {
   const [psychologists, setPsychologists] = useState([]);
-  const [sol, setSol] = useState('sorry, try again ');
+  const [sol, setSol] = useState('Loading..... ');
 
   useEffect(() => {
     // Fetch psychologists based on user's current location

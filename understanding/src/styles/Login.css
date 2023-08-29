@@ -1,8 +1,4 @@
-  /* html,body{
-    width:90vw;
-    height: 80vh;
-    overflow: hidden;
-  } */
+ 
   .Box {
       position: absolute;
       top: 0;
@@ -10,7 +6,8 @@
       z-index: 99999999;
       width: 100%;
       height: 100%;
-      background-color: #d7bb91;
+      background: linear-gradient(#2f1e26, #b03460);
+
   }
 
   .Box1 {
