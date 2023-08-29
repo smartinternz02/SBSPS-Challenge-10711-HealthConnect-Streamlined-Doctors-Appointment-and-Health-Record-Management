@@ -1,20 +1,19 @@
 .assessment-container {
-  height: auto;
   width: 80%;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-color: #fff;
+  background-color: white;
   box-shadow: 0 0 10px #e8a5c8;
   border-radius: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
-
+  padding-bottom: none;
+  padding-top: 100px;
 }
 
 .image-section {
