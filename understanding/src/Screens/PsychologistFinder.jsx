@@ -17,7 +17,8 @@ const PsychologistFinder = () => {
       try {
         const solution = await axios.get('http://127.0.0.1:5000/response',);
         if (solution) {
-          setSol(solution);
+          setSol(solution.data.response);
+          //setSol({ solution });
         }
 
 
@@ -49,7 +50,7 @@ const PsychologistFinder = () => {
           <p style={{ fontSize: '1.6vw' }}>{sol}</p>
         </div>
         <div className="imgss">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTELNbuwMPQAypHZZsmoWFFkA_RDRGZ4YKCKA&usqp=CAU" alt=""  style={{width:'100%',heigh:'100%',objectFit:'cover',borderRadius:'50%'}}/>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTELNbuwMPQAypHZZsmoWFFkA_RDRGZ4YKCKA&usqp=CAU" alt="" style={{ width: '100%', heigh: '100%', objectFit: 'cover', borderRadius: '50%' }} />
         </div>
       </div>
       <div style={{ width: '100%', height: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'black', gap: '2vw', color: 'black', marginBottom: '2vw' }}>
@@ -57,10 +58,10 @@ const PsychologistFinder = () => {
           <img
             src={img1}
             alt="Psychologist Finder"
-            style={{ width: '100%', height: '100%',objectFit:'cover',borderRadius:'30px' }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '30px' }}
           />
         </div>
-        <div style={{ width: '40%', height: 'auto', backgroundColor: 'white', boxShadow: '0 0 10px #e8a5c8',padding:'1vw',borderRadius:'15px' }}>
+        <div style={{ width: '40%', height: 'auto', backgroundColor: 'white', boxShadow: '0 0 10px #e8a5c8', padding: '1vw', borderRadius: '15px' }}>
           <h2 style={{ font: '24px' }}>Psychologists Near You</h2>
           <ul className='psychologistList'>
 

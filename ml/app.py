@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask,  request, jsonify
 import pickle
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
@@ -16,45 +16,61 @@ data = pd.read_csv('Mental_Health_FAQ.csv', delimiter=',')
 # Preprocess the questions for similarity matching
 data['Processed_Questions'] = data['Questions'].apply(lambda x: x.lower())
 
+# Define a variable to store user input
+stored_user_input = None
+
 # Define the home page route
 
 
-@app.route('/')
-def home():
-    return render_template('home.html')  # Render the home page template
+@app.after_request
+def set_cors_headers(response):
+    response.headers["Access-Control-Allow-Origin"] = "http://localhost:5173"
+    response.headers["Access-Control-Allow-Headers"] = "Origin, X-Requested-With, Content-Type, Accept"
+    return response
+
 
 # Define the route to handle user inputs
-
-
-@app.route('/chat', methods=['POST'])
+@app.route('/chat', methods=['POST', 'GET'])
 def req():
-    user_input = request.form['user_input']
+    global stored_user_input
 
-    response = Tmodel.user_input(user_input)
-    # Create a dictionary containing the user input and response
-    data = {
-        'user_input': user_input
-    }
+    # Get the JSON data from the request body
+    request_data = request.get_json()
 
-    # Return the dictionary as JSON response
-    return jsonify(data)
+    if 'user_input' in request_data:
+        user_input = request_data['user_input']
 
-  #  return render_template('chat.html', user_input=user_input, response=response)
+        # Store the user input in the variable
+        stored_user_input = user_input
+
+        # Use the model to generate a response
+        response = Tmodel.user_input(user_input)
+
+        # Create a dictionary containing the user input and response
+        data = {
+            'user_input': user_input,
+            'response': response
+        }
+
+        # Return the dictionary as JSON response
+        return jsonify(data)
+    else:
+        return jsonify({'error': 'Invalid request data'})
 
 
+# Define the route to retrieve the stored user input and provide a response
 @app.route('/response', methods=['GET'])
-def response():
-    user_input = request.form['user_input']
+def get_response():
+    global stored_user_input
 
-    response = Tmodel.user_input(user_input)
-    # Create a dictionary containing the user input and response
-    data = {
-
-        'response': response
-    }
-
-    # Return the dictionary as JSON response
-    return jsonify(data)
+    if stored_user_input:
+        response = Tmodel.user_input(stored_user_input)
+        data = {
+            'response': response
+        }
+        return jsonify(data)
+    else:
+        return jsonify({'error': 'No stored user input'})
 
 
 if __name__ == '__main__':
