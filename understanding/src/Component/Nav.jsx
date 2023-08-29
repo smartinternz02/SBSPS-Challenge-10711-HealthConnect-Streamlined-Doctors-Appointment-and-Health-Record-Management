@@ -15,18 +15,18 @@ function Nav() {
   }
 
   const navStyles = {
-
-    width: '8vw', padding: '.7vw 0px', 
+    width: '8vw', padding: '.7vw 0px',
     borderRadius: '30px', backgroundColor: ' #d65485',
-     textDecoration: 'none', color: 'white',
-      cursor: 'pointer',fontSize:'1.5vw',
-      display:'flex',justifyContent:'center'
+    textDecoration: 'none', color: 'white',
+    cursor: 'pointer', fontSize: '1.5vw',
+    display: 'flex', justifyContent: 'center'
   };
+
   return (
     <div style={{ height: '10vmin', width: '100%', backgroundColor: '#2f1e26', display: 'flex', alignItems: 'center', padding: 20, fontSize: '3vmin', fontWeight: '400', zIndex: 9, boxShadow: 'inset 0 -2px 0vw #d7b4c8' }}>
-      <div style={{ width: '40vw' }}>
+      <Link to="/" style={{ width: '40vw',textDecoration:'none',color:'inherit' }}>
         Understanzee
-      </div>
+      </Link>
       {currentUser.currentuser ?
         <div style={{
           width: '60vw', display: 'flex', justifyContent: 'flex-end', gap:

@@ -1,0 +1,40 @@
+
+.cont>h1{
+    font-size:2.2vw;
+    padding:1.5vw 5vw;
+    background: linear-gradient( #fff, cyan);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.box{
+    width:100%;
+    display: flex;
+    justify-content: flex-start;
+    gap:5vw;
+    padding:0 5vw;
+    margin-bottom: 1vw;
+}
+
+.resp {
+    padding: 1vw;
+    width: 50%;
+    max-height:53.5vh;
+    overflow:'auto';
+    border: 2px solid rgb(114, 210, 239);
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 25px;
+    overflow: auto;
+}
+.resp::-webkit-scrollbar{
+    display: none;
+}
+.imgss{
+    width:30%;
+    max-height:53.5vh;
+    overflow: hidden;
+}
+
+.psychologistList {
+    list-style: none;
+},
