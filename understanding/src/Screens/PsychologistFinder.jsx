@@ -1,16 +1,18 @@
+
 import React, { useState, useEffect } from 'react';
-import img1 from "../assests/Psychology2.jpg";
+import img1 from "../Assets/Psychology2.jpg";
 import axios from 'axios';
 
 const PsychologistFinder = () => {
   const [psychologists, setPsychologists] = useState([]);
 
   useEffect(() => {
-    
+    // Fetch psychologists based on user's current location
     const fetchPsychologists = async () => {
       try {
         
         const response = await axios.get("http://localhost:8080/api/auth/psychologists"); 
+        console.log("YOGITA");
         setPsychologists(response.data);
       } catch (error) {
         console.error('Error fetching psychologists:', error);
