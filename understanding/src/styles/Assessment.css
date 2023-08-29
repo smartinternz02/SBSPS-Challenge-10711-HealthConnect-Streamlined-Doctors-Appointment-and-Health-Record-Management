@@ -1,3 +1,10 @@
+.cont{
+  min-height: 82vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .assessment-container {
   width: 80%;
   margin: 0 auto;
