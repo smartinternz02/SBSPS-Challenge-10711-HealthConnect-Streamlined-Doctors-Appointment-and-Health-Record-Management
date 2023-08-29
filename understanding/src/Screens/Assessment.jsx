@@ -50,8 +50,10 @@ const AssessmentCarousel = () => {
           <div className="carousel-section">
             <h2 className="assessment-heading">Mental Health Talk</h2>
             <form onSubmit={handleForm}>
-              <h3>Write what you are feeling currently/your query</h3>
+              <h3 style={{color:'black'}}>Write what you are feeling currently/your query</h3>
               <textarea
+              placeholder='I am felling .....'
+              required='true'
                 className="response-input"
                 onChange={handleUserInput}
                 value={userInput}
