@@ -15,7 +15,7 @@ const PsychologistFinder = () => {
 
     const result = async () => {
       try {
-        const solution = await axios.get('http://127.0.0.1:5000/response',);
+        const solution = await axios.get('http://127.0.0.1:5000/response');
         if (solution) {
           setSol(solution);
         }
